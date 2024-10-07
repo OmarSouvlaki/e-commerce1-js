@@ -1,0 +1,292 @@
+
+$main_bg_color: #ffffff;
+$header_bg_color: #ed0000;
+$btn_color: rgb(59, 59, 59);
+$btn_hover: rgb(138, 138, 138);
+
+body {
+    width: 100%;
+    background-color: $main_bg_color;
+    font-weight: 311;
+    font-family: "Lexend", Arial, Helvetica, sans-serif;
+    margin: 0;
+
+    color: #414141;
+}
+
+img {
+    width: 52px;
+}
+
+header {
+    width: 100%;
+    padding: 20px 50px;
+    background-color: $header_bg_color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    
+    i {
+        width: 25px;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+        }
+        
+    }
+
+    img {
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+
+.cart-logo-counter {
+    display: flex;
+}
+
+.cart-quantity {
+    
+    color:$main_bg_color;
+    border-radius: 1px;
+}
+.deployMenu {
+    width: 290px;
+    background-color: $main_bg_color;
+    padding: 25px;
+    box-sizing: border-box;
+    height: 500px;
+    position: fixed;
+    left: -85%;
+    text-align: start;
+    transition: all .225s ease-in-out;
+    box-shadow: -6px 5px 22px 0px rgba(0, 0, 0, 30);
+
+    h3 {
+        cursor: pointer;
+    }
+    i {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        img {
+            width: 20px;
+            align-items: end;
+            cursor: pointer;
+        }
+        
+    }
+}
+
+.deployMenu.showMenu {
+    left: 0%;
+}
+
+.banner {
+    width: 100%;
+    padding: 2px 0;
+    text-align: center;
+
+    background-image: url(../img/pumabn2.jpg);
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: inline-block;
+    background-position-y: top;
+    font-size: 22px;
+    color:aliceblue;
+    text-shadow: 5px 5px 5px #414141;
+}
+
+.products {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    align-items: end;
+
+    article {
+        text-align: center;
+        cursor: pointer;
+    }
+
+    img {
+        width: 200px;
+        margin: 18px 10px 0px 10px;
+    }
+
+    h3 {
+        font-weight: 500;
+        margin-bottom: 5px;
+        font-size: 17px;
+    }
+
+    p {
+        font-weight: 300;
+        font-size: 15px;
+    
+    }
+}
+
+
+
+
+.addToCart {
+    background-color: $btn_color;
+    font-weight: 800;
+    color:#ffffff;
+    width: 50%;
+    align-items: center;
+    padding: 11px;
+    margin: 0 auto;
+}
+
+.addToCart:hover {
+    background-color: $btn_hover;
+}
+
+
+.cart {
+    width: 400px;
+    background-color: $main_bg_color;
+    padding: 25px;
+    box-sizing: border-box;
+    height: 100%;
+    position: fixed;
+    right: -100%;
+    top: 100px;
+    transition: all .225s ease-in-out;
+    box-shadow: -6px 5px 22px -12px rgba(0, 0, 0, 30);
+
+    img {
+        width: 30px;
+    }
+
+    div p:first-child {
+        font-weight: 500;
+    }
+
+}
+
+.cart.showCart {
+    right: -1%;
+}
+
+
+
+.cart-item {
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 13px;
+    gap: 2px;
+}
+
+.removeIcon {
+    width: 20px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 820px) {
+    header {
+        padding: 15px;
+    }
+
+    .banner {
+        height: 130px;
+
+        h2 {
+            font-size: 108%;
+        }
+
+        p {
+            font-size: 105%;
+        }
+    }
+
+    
+    .products {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+        img {
+            width: 150px;
+        }
+    }
+
+   
+
+    .cart {
+        width: 400px;
+        top: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        padding: 0px 0;
+
+        h2 {
+            font-size: 18px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+    }
+
+    
+
+    .products {
+        grid-template-columns: 1fr;
+        padding: 10px;
+
+        img {
+            width: 100%;
+            max-width: 200px;
+            margin-bottom: 10px;
+            
+        }
+    }
+
+    .addToCart {
+        margin-bottom: 30px;
+    }
+
+ 
+
+    .cart {
+        width: 100%;
+        box-shadow: none;
+
+        h2 {
+            padding: 15px 0;
+        }
+
+        div {
+            flex-direction: column;
+            align-items: center;
+    
+        }
+
+        img {
+            width: 50px;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+
+}
